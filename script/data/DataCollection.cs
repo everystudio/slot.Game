@@ -5,6 +5,14 @@ using System.Collections.Generic;
 public class DataCollectionParam : CsvDataParam{
 	public int collection_id{ get; set ;}
 	public int status{ get; set;}
+
+	public enum STATUS
+	{
+		UNKNOWN			= 0,
+		NOT_COLLECTED	,
+		COLLECTED		,
+		MAX				,
+	}
 }
 
 public class DataCollection : CsvData<DataCollectionParam> {
@@ -23,4 +31,36 @@ public class DataCollection : CsvData<DataCollectionParam> {
 		}
 		return bRet;
 	}
+
+	public bool Collected( int _iCollectionId)
+	{
+		DataCollectionParam param;
+		if( dict.TryGetValue( _iCollectionId , out param))
+		{
+			if( param.status == (int)DataCollectionParam.STATUS.COLLECTED)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public bool NotCollected(int _iCollectionId)
+	{
+		DataCollectionParam param;
+		if (dict.TryGetValue(_iCollectionId, out param))
+		{
+			if (param.status != (int)DataCollectionParam.STATUS.COLLECTED)
+			{
+				return true;
+			}
+		}
+		else
+		{
+			return true;
+		}
+		return false;
+	}
+
+
 }

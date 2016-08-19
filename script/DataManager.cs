@@ -24,6 +24,13 @@ public class DataManager : DataManagerBase<DataManager> {
 		set{ m_masterCollection = value; }
 	}
 
+	private DataCollection m_dataCollection = new DataCollection();
+	public DataCollection dataCollection
+	{
+		get { return m_dataCollection; }
+		set { m_dataCollection = value; }
+	}
+
 	public override void Initialize ()
 	{
 		base.Initialize ();

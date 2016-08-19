@@ -18,6 +18,24 @@ public class MasterCollection : CsvData<MasterCollectionParam> {
 	public const string FILENAME = "master/collection";
 	Dictionary<int, MasterCollectionParam> dict = new Dictionary<int, MasterCollectionParam> ();
 
+	public bool Collected(int _collectionId)
+	{
+		if (DataManager.Instance.dataCollection.Collected(_collectionId))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public bool NotCollected( int _collectionId)
+	{
+		if (DataManager.Instance.dataCollection.NotCollected(_collectionId))
+		{
+			return true;
+		}
+		return false;
+	}
+
 	public MasterCollectionParam Get( int _iCollectionId ){
 		MasterCollectionParam ret;
 		if (dict.TryGetValue (_iCollectionId , out ret )) {

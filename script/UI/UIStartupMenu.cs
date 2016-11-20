@@ -11,8 +11,9 @@ public class UIStartupMenu : CPanel {
 	{
 		base.awake ();
 		m_userParam.Initialize (DataManager.USER_PARAM.COIN);
+		GooglePlayConnection.Instance.Connect();
 	}
-	
+
 	public bool m_bLoaded;
 	protected override void panelStart ()
 	{

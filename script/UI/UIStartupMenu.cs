@@ -12,6 +12,9 @@ public class UIStartupMenu : CPanel {
 		base.awake ();
 		m_userParam.Initialize (DataManager.USER_PARAM.COIN);
 		GooglePlayConnection.Instance.Connect();
+
+		SpriteManager.Instance.LoadAtlas("texture/collection/kimodameshi");
+		SpriteManager.Instance.LoadAtlas("texture/collection/zoo");
 	}
 
 	public bool m_bLoaded;
@@ -28,6 +31,15 @@ public class UIStartupMenu : CPanel {
 		}
 	}
 
+	public void OnShowRanking()
+	{
+		UtilPlayService.Instance.showLeaderBoard();
+	}
+
+	public void OnShowAchievement()
+	{
+		UtilPlayService.Instance.showAchievementsUI();
+	}
 
 
 

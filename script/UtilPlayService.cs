@@ -26,7 +26,7 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 
 
 	//example
-	private const string LEADERBOARD_ID = "CgkIipfs2qcGEAIQAA";
+	private const string LEADERBOARD_ID = "CgkI9Y3s2cEKEAIQHw";
 	//private const string LEADERBOARD_ID = "REPLACE_WITH_YOUR_ID";
 
 
@@ -157,7 +157,7 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 		}
 	}
 
-	private void showLeaderBoard() {
+	public void showLeaderBoard() {
 		GooglePlayManager.Instance.ShowLeaderBoardById (LEADERBOARD_ID);
 		SA_StatusBar.text = "Shwoing Leader Board UI for " + LEADERBOARD_ID;
 	}
@@ -177,7 +177,7 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 
 
 
-	private void showAchievementsUI() {
+	public void showAchievementsUI() {
 		GooglePlayManager.Instance.ShowAchievementsUI ();
 		SA_StatusBar.text = "Showing Achievements UI";
 

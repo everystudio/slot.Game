@@ -31,11 +31,30 @@ public class DataManager : DataManagerBase<DataManager> {
 		set { m_dataCollection = value; }
 	}
 
+	private MasterAchievement m_masterAchievement = new MasterAchievement();
+	public MasterAchievement masterAchevement
+	{
+		get { return m_masterAchievement; }
+		set { m_masterAchievement = value; }
+	}
+	private DataAchievement m_dataAchievement = new DataAchievement();
+	public DataAchievement dataAchievement
+	{
+		get{ return dataAchievement; }
+		set { m_dataAchievement = value; }
+	}
+
+
+
 	public override void Initialize ()
 	{
 		base.Initialize ();
-		m_dataUser.Load (DataUser.FILENAME);
+		if( m_dataUser.Load (DataUser.FILENAME) == false )
+		{
+			;// 一度データを作ったりした方がいいかも
+		}
 		m_masterCollection.LoadMulti (MasterCollection.FILENAME);
+		m_masterAchievement.LoadMulti(MasterAchievement.FILENAME);
 	}
 
 }

@@ -291,7 +291,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 35250239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 498570324}
+        m_MethodName: OnShowRanking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &35250239
@@ -1562,7 +1573,6 @@ GameObject:
   - 222: {fileID: 645204179}
   - 114: {fileID: 645204178}
   - 114: {fileID: 645204177}
-  - 114: {fileID: 645204180}
   m_Layer: 5
   m_Name: btnShowData
   m_TagString: Untagged
@@ -1627,7 +1637,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 645204178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 498570324}
+        m_MethodName: OnShowAchievement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &645204178
@@ -1663,18 +1684,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 645204175}
---- !u!114 &645204180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 645204175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ab7c99d8f369c4c833ddbbc00dfb34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_strPageName: ShowData
 --- !u!1 &647784442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2492,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1058173794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0635149648393b645a18475db3ce6664, type: 3}
   m_Name: 
@@ -3090,7 +3099,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Data
+  m_Text: Mission
 --- !u!222 &1382776110
 CanvasRenderer:
   m_ObjectHideFlags: 0

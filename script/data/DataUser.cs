@@ -15,12 +15,10 @@ public class DataUser : DataKvs {
 	public override bool Load (string _strFilename)
 	{
 		bool bRet = base.Load (_strFilename);
-
 		m_iCoin = ReadInt (KEY_COIN);
 		m_iTicket = ReadInt (KEY_TICKET);
 		return bRet;
 	}
-
 
 	public string uid{ get; set; }
 	public UnityEventInt UpdateCoin = new UnityEventInt ();
@@ -46,7 +44,6 @@ public class DataUser : DataKvs {
 			UpdateTicket.Invoke (m_iTicket);
 		}
 	}
-
 
 
 

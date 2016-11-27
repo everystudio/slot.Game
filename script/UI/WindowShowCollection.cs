@@ -54,7 +54,8 @@ public class WindowShowCollection : CPanel {
 
 		foreach (MasterCollectionParam param in DataManager.Instance.masterCollection.list)
 		{
-			switch( _eDispList)
+			Debug.LogError(string.Format("name:{0}", param.name));
+			switch ( _eDispList)
 			{
 				case DISP_LIST.COLLECTED:
 					if(DataManager.Instance.masterCollection.Collected(param.collection_id))
@@ -79,6 +80,7 @@ public class WindowShowCollection : CPanel {
 				default:
 					continue;
 			}
+
 
 			CollectionBanner banner = PrefabManager.Instance.MakeScript<CollectionBanner>("prefab/PrefCollectionBanner", m_goContent);
 			banner.Initialize(param);

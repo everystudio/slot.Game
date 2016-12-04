@@ -8,15 +8,53 @@ public class MasterCollectionParam : CsvDataParam{
 	public string type { get; set ;}
 	public string type_sub{ get; set ;}
 	public string name{ get; set ;}
+	public string name_en{ get; set ; }
+	public string filename{ get; set ; }
 	public int rarity{ get; set ;}
 	public string price_type { get; set ;}
 	public int price{ get; set ;}
 	public string flavor{ get; set; }
+	public string flavor_en { get; set; }
 }
 
 public class MasterCollection : CsvData<MasterCollectionParam> {
 	public const string FILENAME = "master/collection";
 	Dictionary<int, MasterCollectionParam> dict = new Dictionary<int, MasterCollectionParam> ();
+
+	public List<MasterCollectionParam> GetShopCollection( int _iNum)
+	{
+		List<MasterCollectionParam> retList = new List<MasterCollectionParam>();
+		List<MasterCollectionParam> tempList = GetNotCollected();
+		int iCount = tempList.Count;
+		int[] iArr = new int[iCount];
+		for( int i = 0; i < iCount; i++)
+		{
+			iArr[i] = 100;
+		}
+
+		int iLoopCount = iCount < _iNum ? iCount : _iNum;
+		for( int i = 0; i < iLoopCount; i++)
+		{
+			int iIndex = UtilRand.GetIndex(iArr);
+			retList.Add(tempList[iIndex]);
+			iArr[iIndex] = 0;
+		}
+
+		return retList;
+	}
+	public List<MasterCollectionParam> GetNotCollected()
+	{
+		List<MasterCollectionParam> retList = new List<MasterCollectionParam>();
+
+		foreach( MasterCollectionParam param in list)
+		{
+			if (DataManager.Instance.dataCollection.NotCollected(param.collection_id))
+			{
+				retList.Add(param);
+			}
+		}
+		return retList;
+	}
 
 	public bool Collected(int _collectionId)
 	{
@@ -56,8 +94,8 @@ public class MasterCollection : CsvData<MasterCollectionParam> {
 		return bRet;
 	}
 
-	static public string GetSpriteName( int _iCollectionId ){
-		return string.Format ("texture/collection/col_{0:D5}", _iCollectionId);
+	static public string GetSpriteName( string _filename ){
+		return string.Format ("texture/collection/{0:D5}", _filename);
 	}
 
 }

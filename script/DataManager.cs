@@ -55,6 +55,10 @@ public class DataManager : DataManagerBase<DataManager> {
 		}
 		m_masterCollection.LoadMulti (MasterCollection.FILENAME);
 		m_masterAchievement.LoadMulti(MasterAchievement.FILENAME);
+
+		SpriteManager.Instance.LoadAtlas("texture/collection/kimodameshi");
+		SpriteManager.Instance.LoadAtlas("texture/collection/zoo");
+
 	}
 
 }

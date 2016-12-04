@@ -54,7 +54,6 @@ public class WindowShowCollection : CPanel {
 
 		foreach (MasterCollectionParam param in DataManager.Instance.masterCollection.list)
 		{
-			Debug.LogError(string.Format("name:{0}", param.name));
 			switch ( _eDispList)
 			{
 				case DISP_LIST.COLLECTED:

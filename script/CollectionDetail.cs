@@ -101,7 +101,10 @@ public class CollectionDetail : MonoBehaviour {
 		//MasterFoodmenuParam _FoodmenuParam 
 		m_masterFoodmenu = _param;
 		m_txtCollectionName.text = m_masterFoodmenu.name;
-		m_imgCollectionIcon.sprite = SpriteManager.Instance.LoadSprite (MasterCollection.GetSpriteName (m_masterFoodmenu.collection_id));
+		m_imgCollectionIcon.sprite = SpriteManager.Instance.LoadSprite (MasterCollection.GetSpriteName (m_masterFoodmenu.filename));
+
+		SpriteManager.AdjustSquareSize(ref m_imgCollectionIcon, 100.0f);
+
 		m_ctrlPrice.SetNum (m_masterFoodmenu.price_type, m_masterFoodmenu.price);
 
 		m_txtDescription.text = m_masterFoodmenu.flavor;

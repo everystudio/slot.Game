@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class DataManager : DataManagerBase<DataManager> {
 	public enum USER_PARAM{
@@ -40,19 +41,79 @@ public class DataManager : DataManagerBase<DataManager> {
 	private DataAchievement m_dataAchievement = new DataAchievement();
 	public DataAchievement dataAchievement
 	{
-		get{ return dataAchievement; }
+		get{ return m_dataAchievement; }
 		set { m_dataAchievement = value; }
 	}
 
+	public bool m_bRecoveryWait;
+	public void initialRecoveryCoin()
+	{
+		TimeSpan ts = TimeManager.Instance.GetDiffNow(user.recoveryTime);
+		//Debug.LogError(user.recoveryTime);
+		//Debug.LogError(ts.TotalSeconds);
+		if (ts.TotalSeconds < 0)
+		{
+			if (user.coin < DataUser.DefaultCoin)
+			{
+				user.coin = DataUser.DefaultCoin;
+			}
+			m_bRecoveryWait = false;
+		}
+		else
+		{
+			m_bRecoveryWait = true;
+			Invoke("invokeRecoveryCoin", (float)ts.TotalSeconds);
+		}
+	}
 
+	public void updateUserCoin( int _iCoin)
+	{
+		//Debug.LogError(string.Format("updateUserCoin:{0}", _iCoin));
+		if (m_bRecoveryWait)
+		{
+			if(DataUser.DefaultCoin < _iCoin)
+			{
+				CancelInvoke("invokeRecoveryCoin");
+				m_bRecoveryWait = false;
+			}
+		}
+		else
+		{
+			if( _iCoin < DataUser.DefaultCoin)
+			{
+				float fAddSeconds = (float)(60 * 60);
+				user.recoveryTime = TimeManager.StrGetTime((int)fAddSeconds);
+
+				Debug.LogError(user.recoveryTime);
+				Invoke("invokeRecoveryCoin", fAddSeconds);
+				m_bRecoveryWait = true;
+			}
+		}
+
+	}
+	
+	private void invokeRecoveryCoin()
+	{
+		if( user.coin < DataUser.DefaultCoin)
+		{
+			user.coin = DataUser.DefaultCoin;
+		}
+		m_bRecoveryWait = false;
+	}
 
 	public override void Initialize ()
 	{
 		base.Initialize ();
+		m_dataKvs.Load(DataKvs.FILE_NAME);
 		if( m_dataUser.Load (DataUser.FILENAME) == false )
 		{
 			;// 一度データを作ったりした方がいいかも
 		}
+		user.UpdateCoin.AddListener(updateUserCoin);
+		initialRecoveryCoin();
+		m_dataAchievement.Load(DataAchievement.FILENAME);
+		m_dataCollection.Load(DataCollection.FILENAME);
+
 		m_masterCollection.LoadMulti (MasterCollection.FILENAME);
 		m_masterAchievement.LoadMulti(MasterAchievement.FILENAME);
 
@@ -60,6 +121,41 @@ public class DataManager : DataManagerBase<DataManager> {
 		SpriteManager.Instance.LoadAtlas("texture/collection/zoo");
 
 	}
+
+	private void dataSave()
+	{
+#if UNITY_EDITOR
+		Debug.LogError ("save");
+#endif
+		dataAchievement.Save(DataAchievement.FILENAME);
+		dataCollection.Save(DataCollection.FILENAME);
+		user.Save(DataUser.FILENAME);
+	}
+
+	void OnApplicationPause(bool pauseStatus)
+	{
+		//Debug.LogError(string.Format("OnApplicationPause:{0}", pauseStatus));
+		if (pauseStatus)
+		{
+			dataSave();
+		}
+		else
+		{
+
+		}
+	}
+#if UNITY_EDITOR
+	public bool m_bSave = false;
+	void Update()
+	{
+		if( m_bSave)
+		{
+			m_bSave = false;
+			dataSave();
+		}
+
+	}
+#endif
 
 }
 

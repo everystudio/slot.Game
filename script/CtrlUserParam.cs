@@ -51,11 +51,11 @@ public class CtrlUserParam : MonoBehaviour {
 
 
 	private void UpdateParam( int _iParam ){
+		//Debug.LogError(_iParam);
 		m_textParam.text = _iParam.ToString ();
 	}
 
 	public void Initialize( DataManager.USER_PARAM _eUserParam ){
-
 		SetIcon (_eUserParam);
 		switch (_eUserParam) {
 		case DataManager.USER_PARAM.COIN:

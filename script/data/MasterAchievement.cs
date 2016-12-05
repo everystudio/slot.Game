@@ -20,6 +20,7 @@ public class MasterAchievement : CsvData<MasterAchievementParam> {
 #if UNITY_ANDROID
 	public const string FILENAME = "master/achievement_and";
 #elif UNITY_IOS
+	public const string FILENAME = "master/achievement_ios";
 #else
 #endif
 

@@ -33,6 +33,7 @@ public class CollectionBanner : MonoBehaviour {
 		m_masterParam = _param;
 		m_txtName.text = _param.name;
 
+
 		m_imgIcon.sprite = SpriteManager.Instance.LoadSprite (MasterCollection.GetSpriteName(_param.filename));
 
 		float fOriginSize = 100.0f;

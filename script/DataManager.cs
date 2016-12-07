@@ -111,9 +111,8 @@ public class DataManager : DataManagerBase<DataManager> {
 		}
 		user.UpdateCoin.AddListener(updateUserCoin);
 		initialRecoveryCoin();
-		m_dataAchievement.Load(DataAchievement.FILENAME);
-		m_dataCollection.Load(DataCollection.FILENAME);
-
+		m_dataAchievement.LoadMulti(DataAchievement.FILENAME);
+		m_dataCollection.LoadMulti(DataCollection.FILENAME);
 		m_masterCollection.LoadMulti (MasterCollection.FILENAME);
 		m_masterAchievement.LoadMulti(MasterAchievement.FILENAME);
 

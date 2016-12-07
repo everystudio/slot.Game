@@ -117,4 +117,9 @@ public class WindowShowCollection : CPanel {
 
 	}
 
+	public void backMain()
+	{
+		UIAssistant.main.ShowPage("StartupMenu");
+	}
+
 }

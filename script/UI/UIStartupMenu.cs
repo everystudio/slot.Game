@@ -11,7 +11,8 @@ public class UIStartupMenu : CPanel {
 	{
 		base.awake ();
 		m_userParam.Initialize (DataManager.USER_PARAM.COIN);
-		GooglePlayConnection.Instance.Connect();
+
+		AchievementManager.Instance.Login();
 
 		SpriteManager.Instance.LoadAtlas("texture/collection/kimodameshi");
 		SpriteManager.Instance.LoadAtlas("texture/collection/zoo");
@@ -34,11 +35,13 @@ public class UIStartupMenu : CPanel {
 	public void OnShowRanking()
 	{
 		UtilPlayService.Instance.showLeaderBoard();
+		AchievementManager.Instance.ShowRanking();
 	}
 
 	public void OnShowAchievement()
 	{
-		UtilPlayService.Instance.showAchievementsUI();
+		//UtilPlayService.Instance.showAchievementsUI();
+		AchievementManager.Instance.ShowAchievement();
 	}
 
 

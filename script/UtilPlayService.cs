@@ -63,7 +63,7 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 	public SA_Label b_all_time;
 	*/
 
-	public Text text;
+//	public Text text;
 
 	void Start() {
 
@@ -176,12 +176,12 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 
 
 
-
+	/*
 	public void showAchievementsUI() {
 		GooglePlayManager.Instance.ShowAchievementsUI ();
 		SA_StatusBar.text = "Showing Achievements UI";
-
 	}
+	*/
 
 	private void loadAchievements() {
 		GooglePlayManager.ActionAchievementsLoaded += OnAchievementsLoaded;
@@ -304,8 +304,10 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 
 }
 
-private void OnAchievmnetsLoadedInfoListner(GooglePlayResult res) {
-	GPAchievement achievement = GooglePlayManager.Instance.GetAchievement(INCREMENTAL_ACHIEVEMENT_ID);
+
+	private void OnAchievmnetsLoadedInfoListner(GooglePlayResult res) {
+		GooglePlayManager.Instance.GetAchievement(INCREMENTAL_ACHIEVEMENT_ID);
+		//GPAchievement achievement = GooglePlayManager.Instance.GetAchievement(INCREMENTAL_ACHIEVEMENT_ID);
 
 	/*
 	if(achievement != null) {
@@ -328,7 +330,7 @@ private void OnAchievmnetsLoadedInfoListner(GooglePlayResult res) {
 				Debug.Log(achievement.Id);
 				Debug.Log(achievement.Name);
 
-				text.text = string.Format("{0}{1}", text.text, achievement.Name);
+				//text.text = string.Format("{0}{1}", text.text, achievement.Name);
 				Debug.Log(achievement.Description);
 				Debug.Log(achievement.Type);
 				Debug.Log(achievement.State);
@@ -374,7 +376,8 @@ private void OnAchievmnetsLoadedInfoListner(GooglePlayResult res) {
 	}
 
 	private void UpdateBoardInfo() {
-		GPLeaderBoard leaderboard = GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID);
+		GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID);
+		//GPLeaderBoard leaderboard = GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID);
 		/*
 		if(leaderboard != null) {
 			b_id.text 		= "Id: " + leaderboard.Id;
@@ -416,7 +419,7 @@ private void OnAchievmnetsLoadedInfoListner(GooglePlayResult res) {
 	private void OnPlayerConnected() {
 		//SA_StatusBar.text = "Player Connected";
 		//playerLabel.text = GooglePlayManager.Instance.player.name + "(" + GooglePlayManager.Instance.currentAccount + ")";
-		text.text = "connected:";
+		//text.text = "connected:";
 		loadAchievements();
 	}
 

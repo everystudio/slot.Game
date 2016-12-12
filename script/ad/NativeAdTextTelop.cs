@@ -19,7 +19,7 @@ public class NativeAdTextTelop : MonoBehaviourEx
 	private int FONT_SIZE = 30;
 	//private float INTERVAL = 1.0f;
 	private float BACK_WIDTH = 450.0f;
-	private float BACK_HEIGHT = 45.0f;
+	//private float BACK_HEIGHT = 45.0f;
 	//private float m_fTimer;
 
 	private string m_strPr;

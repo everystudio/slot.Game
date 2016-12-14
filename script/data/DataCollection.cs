@@ -66,7 +66,7 @@ public class DataCollection : CsvData<DataCollectionParam> {
 				dict.Add (param.collection_id, param);
 			}
 		}
-		Debug.LogError(string.Format("{0}:{1}", list.Count, dict.Count));
+		//Debug.LogError(string.Format("{0}:{1}", list.Count, dict.Count));
 		return bRet;
 	}
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class DataManager : DataManagerBase<DataManager> {
@@ -13,6 +14,11 @@ public class DataManager : DataManagerBase<DataManager> {
 		MAX			,
 	}
 
+#if UNITY_ANDROID
+	public const string LEADERBOARD_ID_30GAME = "CgkI9Y3s2cEKEAIQHw";
+#elif UNITY_IOS
+	public const string LEADERBOARD_ID_30GAME = "everystudio.slot.tarot.30game";
+#endif
 	private DataUser m_dataUser = new DataUser();
 	public DataUser user {
 		get{ return m_dataUser; }
@@ -155,6 +161,64 @@ public class DataManager : DataManagerBase<DataManager> {
 
 	}
 #endif
+
+	public List<MasterAchievementParam> GetNoAchievementForSlot(string _strSymbol)
+	{
+		List<MasterAchievementParam> ret = new List<MasterAchievementParam>();
+
+		foreach (MasterAchievementParam param in masterAchevement.list)
+		{
+			if (param.symbol.Equals(_strSymbol))
+			{
+				if (dataAchievement.NotCollected(param.id))
+				{
+					ret.Add(param);
+				}
+			}
+		}
+		return ret;
+	}
+
+	public List<MasterAchievementParam> GetNoAchievementForLine()
+	{
+		List<MasterAchievementParam> ret = new List<MasterAchievementParam>();
+
+		foreach (MasterAchievementParam param in masterAchevement.list)
+		{
+			if (0 < param.line_num)
+			{
+				if (dataAchievement.NotCollected(param.id))
+				{
+					ret.Add(param);
+				}
+			}
+		}
+		return ret;
+	}
+	public List<MasterAchievementParam> GetNoAchievementForCollection()
+	{
+		List<MasterAchievementParam> ret = new List<MasterAchievementParam>();
+
+		foreach (MasterAchievementParam param in masterAchevement.list)
+		{
+			if (0 < param.collection_num)
+			{
+				if (dataAchievement.NotCollected(param.id))
+				{
+					ret.Add(param);
+				}
+			}
+		}
+		return ret;
+	}
+	
+	public void Achieve(int _iAchievementId , string _strAchievementKey , string _strTitle )
+	{
+		Debug.LogError(string.Format("get achievement:{0}", _strTitle));
+		AchievementManager.Instance.GetAchievement(_strAchievementKey);
+		dataAchievement.Achieve(_iAchievementId);
+	}
+
 
 }
 

@@ -31,21 +31,21 @@ public class AchievementManager : Singleton<AchievementManager> {
 
 	}
 
-	public void ShowRanking()
+	public void ShowRanking(string _strRanking)
 	{
 #if UNITY_ANDROID
-		GooglePlayManager.Instance.ShowLeaderBoardById("CgkI9Y3s2cEKEAIQHw");
+		GooglePlayManager.Instance.ShowLeaderBoardById(_strRanking);
 #elif UNITY_IOS
 		IOSGameCenterManager.ShowLeaderboardUI();
 #endif
 
 	}
-	public void RegisterRanking( string _strRanking , int _iScore)
+	public void RegisterRanking( string _strRanking , long _lScore)
 	{
 #if UNITY_ANDROID
-		GooglePlayManager.Instance.SubmitScoreById(_strRanking, (long)_iScore);
+		GooglePlayManager.Instance.SubmitScoreById(_strRanking, _lScore);
 #elif UNITY_IOS
-		IOSGameCenterManager.ReportScore(_strRanking, (long)_iScore);
+		IOSGameCenterManager.ReportScore(_strRanking, _lScore);
 #endif
 
 	}

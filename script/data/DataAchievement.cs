@@ -34,6 +34,18 @@ public class DataAchievement : CsvData<DataAchievementParam> {
 		return bRet;
 	}
 
+	public void Achieve(int _iAchevementId)
+	{
+		if( Collected(_iAchevementId) == false)
+		{
+			DataAchievementParam param = new DataAchievementParam();
+			param.achievement_id = _iAchevementId;
+			param.status = (int)DataAchievementParam.STATUS.COLLECTED;
+			list.Add(param);
+			dict.Add(_iAchevementId, param);
+		}
+	}
+
 	public bool Collected(int _iAchevementId)
 	{
 		DataAchievementParam param;

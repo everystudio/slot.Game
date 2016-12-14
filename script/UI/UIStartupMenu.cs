@@ -34,8 +34,7 @@ public class UIStartupMenu : CPanel {
 
 	public void OnShowRanking()
 	{
-		UtilPlayService.Instance.showLeaderBoard();
-		AchievementManager.Instance.ShowRanking();
+		AchievementManager.Instance.ShowRanking(DataManager.LEADERBOARD_ID_30GAME);
 	}
 
 	public void OnShowAchievement()

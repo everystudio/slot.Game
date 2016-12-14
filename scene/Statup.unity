@@ -939,7 +939,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 251690736}
   m_OnClick:
     m_PersistentCalls:
@@ -3312,7 +3312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621cb3bbcc2fefa4498152b6cf234a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1537280004}
 --- !u!4 &1418396258
 Transform:
   m_ObjectHideFlags: 0

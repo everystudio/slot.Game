@@ -2865,6 +2865,7 @@ GameObject:
   - 224: {fileID: 74766117}
   - 222: {fileID: 74766119}
   - 114: {fileID: 74766118}
+  - 114: {fileID: 74766120}
   m_Layer: 5
   m_Name: Icon Balance
   m_TagString: Untagged
@@ -2926,6 +2927,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74766116}
+--- !u!114 &74766120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 74766116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &83904879
 GameObject:
   m_ObjectHideFlags: 0
@@ -14000,6 +14012,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 442126000}
+  - 114: {fileID: 442126001}
   m_Layer: 5
   m_Name: Group Level
   m_TagString: Untagged
@@ -14030,6 +14043,17 @@ RectTransform:
   m_AnchoredPosition: {x: -498, y: 77}
   m_SizeDelta: {x: 450, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &442126001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 442125999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &442930822
 GameObject:
   m_ObjectHideFlags: 0
@@ -16836,6 +16860,7 @@ GameObject:
   - 222: {fileID: 536607473}
   - 114: {fileID: 536607472}
   - 114: {fileID: 536607471}
+  - 114: {fileID: 536607474}
   m_Layer: 5
   m_Name: Button Shop
   m_TagString: Untagged
@@ -16950,6 +16975,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 536607469}
+--- !u!114 &536607474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536607469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538545075
 GameObject:
   m_ObjectHideFlags: 0
@@ -17737,6 +17773,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 559960472}
   - 222: {fileID: 559960474}
+  - 114: {fileID: 559960473}
   m_Layer: 5
   m_Name: Group RoundCost
   m_TagString: Untagged
@@ -17766,6 +17803,17 @@ RectTransform:
   m_AnchoredPosition: {x: -172, y: -515.9}
   m_SizeDelta: {x: 360, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &559960473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559960471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &559960474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19625,6 +19673,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 622653404}
   - 222: {fileID: 622653406}
+  - 114: {fileID: 622653405}
   m_Layer: 5
   m_Name: Group Bet
   m_TagString: Untagged
@@ -19654,6 +19703,17 @@ RectTransform:
   m_AnchoredPosition: {x: -246, y: -159}
   m_SizeDelta: {x: 360, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &622653405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622653403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &622653406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22106,6 +22166,7 @@ GameObject:
   - 222: {fileID: 714008876}
   - 114: {fileID: 714008875}
   - 114: {fileID: 714008874}
+  - 114: {fileID: 714008877}
   m_Layer: 5
   m_Name: Button Play
   m_TagString: Untagged
@@ -22221,6 +22282,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714008872}
+--- !u!114 &714008877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714008872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &714407451
 GameObject:
   m_ObjectHideFlags: 0
@@ -32636,6 +32708,7 @@ GameObject:
   - 222: {fileID: 1092401925}
   - 114: {fileID: 1092401924}
   - 114: {fileID: 1092401923}
+  - 114: {fileID: 1092401926}
   m_Layer: 5
   m_Name: Button Pay Table
   m_TagString: Untagged
@@ -32750,6 +32823,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092401921}
+--- !u!114 &1092401926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092401921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096400454
 GameObject:
   m_ObjectHideFlags: 0

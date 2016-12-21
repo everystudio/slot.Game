@@ -8,7 +8,7 @@ public class OffsetUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//if (2000 < Screen.width)
+		if (2000 < Screen.width)
 		{
 			Vector3 pos = gameObject.transform.localPosition;
 			pos = new Vector3(pos.x + offset_x, pos.y + offset_y, pos.z);

@@ -2866,6 +2866,7 @@ GameObject:
   - 222: {fileID: 74766119}
   - 114: {fileID: 74766118}
   - 114: {fileID: 74766120}
+  - 114: {fileID: 74766121}
   m_Layer: 5
   m_Name: Icon Balance
   m_TagString: Untagged
@@ -2938,6 +2939,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1304519b7c44ed4980ad1c369e82425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &74766121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 74766116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c30497f04086847ba8f780bb08ed5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset_x: 0
+  offset_y: -30
 --- !u!1 &83904879
 GameObject:
   m_ObjectHideFlags: 0
@@ -32889,7 +32903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset_x: 0
-  offset_y: -50
+  offset_y: -80
 --- !u!1 &1096400454
 GameObject:
   m_ObjectHideFlags: 0

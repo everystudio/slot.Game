@@ -77,7 +77,7 @@ public class DataManager : DataManagerBase<DataManager> {
 		//Debug.LogError(string.Format("updateUserCoin:{0}", _iCoin));
 		if (m_bRecoveryWait)
 		{
-			if(DataUser.DefaultCoin < _iCoin)
+			if(DataUser.DefaultCoin <= _iCoin)
 			{
 				CancelInvoke("invokeRecoveryCoin");
 				m_bRecoveryWait = false;
@@ -90,7 +90,7 @@ public class DataManager : DataManagerBase<DataManager> {
 				float fAddSeconds = (float)(60 * 60);
 				user.recoveryTime = TimeManager.StrGetTime((int)fAddSeconds);
 
-				Debug.LogError(user.recoveryTime);
+				//Debug.LogError(string.Format("recoveryTime:{0}", user.recoveryTime));
 				Invoke("invokeRecoveryCoin", fAddSeconds);
 				m_bRecoveryWait = true;
 			}

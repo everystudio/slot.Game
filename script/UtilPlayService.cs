@@ -151,7 +151,7 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 			SA_StatusBar.text = "Loading Leader Boards Data...";
 		} else {
 			SA_StatusBar.text = LEADERBOARD_NAME + "  score  " + GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString();
-			AN_PoupsProxy.showMessage (LEADERBOARD_NAME + "  score",  GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString());
+			//AN_PoupsProxy.showMessage (LEADERBOARD_NAME + "  score",  GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString());
 
 			UpdateBoardInfo();
 		}
@@ -209,12 +209,12 @@ public class UtilPlayService : Singleton<UtilPlayService> {
 	private void ResetAchievement() {
 		GooglePlayManager.Instance.ResetAchievement(INCREMENTAL_ACHIEVEMENT_ID);
 
-		AN_PoupsProxy.showMessage ("Reset Complete: ", "Reset Complete, but since this is feature for testing only, achievement data cache will be updated after next interaction with acheivment");
+		//AN_PoupsProxy.showMessage ("Reset Complete: ", "Reset Complete, but since this is feature for testing only, achievement data cache will be updated after next interaction with acheivment");
 	}
 
 	private void ResetAllAchievements() {
 		GooglePlayManager.Instance.ResetAllAchievements();
-		AN_PoupsProxy.showMessage ("Reset Complete: ", "Reset Complete, but since this is feature for testing only, achievement data cache will be updated after next interaction with acheivment");
+		//AN_PoupsProxy.showMessage ("Reset Complete: ", "Reset Complete, but since this is feature for testing only, achievement data cache will be updated after next interaction with acheivment");
 
 	}
 
@@ -339,17 +339,17 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 			}
 
 			SA_StatusBar.text = "Total Achievement: " + GooglePlayManager.Instance.Achievements.Count.ToString();
-			AN_PoupsProxy.showMessage ("Achievments Loaded", "Total Achievements: " + GooglePlayManager.Instance.Achievements.Count.ToString());
+			//AN_PoupsProxy.showMessage ("Achievments Loaded", "Total Achievements: " + GooglePlayManager.Instance.Achievements.Count.ToString());
 		} else {
 			SA_StatusBar.text = result.Message;
-			AN_PoupsProxy.showMessage ("Achievments Loaded error: ", result.Message);
+			//AN_PoupsProxy.showMessage ("Achievments Loaded error: ", result.Message);
 		}
 
 	}
 
 	private void OnAchievementUpdated(GP_AchievementResult result) {
 		SA_StatusBar.text = "Achievment Updated: Id: " + result.achievementId + "\n status: " + result.Message;
-		AN_PoupsProxy.showMessage ("Achievment Updated ", "Id: " + result.achievementId + "\n status: " + result.Message);
+		//AN_PoupsProxy.showMessage ("Achievment Updated ", "Id: " + result.achievementId + "\n status: " + result.Message);
 	}
 
 	
@@ -359,16 +359,16 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 
 		if(result.IsSucceeded) {
 			if( GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID) == null) {
-				AN_PoupsProxy.showMessage("Leader boards loaded", LEADERBOARD_ID + " not found in leader boards list");
+				//AN_PoupsProxy.showMessage("Leader boards loaded", LEADERBOARD_ID + " not found in leader boards list");
 				return;
 			}
 
 
 			SA_StatusBar.text = LEADERBOARD_NAME + "  score  " + GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString();
-			AN_PoupsProxy.showMessage (LEADERBOARD_NAME + "  score",  GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString());
+			//AN_PoupsProxy.showMessage (LEADERBOARD_NAME + "  score",  GooglePlayManager.Instance.GetLeaderBoard(LEADERBOARD_ID).GetCurrentPlayerScore(GPBoardTimeSpan.ALL_TIME, GPCollectionType.FRIENDS).LongScore.ToString());
 		} else {
 			SA_StatusBar.text = result.Message;
-			AN_PoupsProxy.showMessage ("Leader-Boards Loaded error: ", result.Message);
+			//AN_PoupsProxy.showMessage ("Leader-Boards Loaded error: ", result.Message);
 		}
 
 		UpdateBoardInfo();
@@ -435,7 +435,7 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 
 	void OnGiftResult (GooglePlayGiftRequestResult result) {
 		SA_StatusBar.text = "Gift Send Result:  " + result.code.ToString();
-		AN_PoupsProxy.showMessage("Gfit Send Complete", "Gift Send Result: " + result.code.ToString());
+		//AN_PoupsProxy.showMessage("Gfit Send Complete", "Gift Send Result: " + result.code.ToString());
 	}
 
 	void OnPendingGiftsDetected (List<GPGameRequest> gifts) {
@@ -456,9 +456,11 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 	}
 
 	void OnGameRequestAccepted (List<GPGameRequest> gifts) {
+		/**
 		foreach(GPGameRequest g in gifts) {
-			AN_PoupsProxy.showMessage("Gfit Accepted", g.playload + " is excepted");
+			//AN_PoupsProxy.showMessage("Gfit Accepted", g.playload + " is excepted");
 		}
+		*/
 	}
 
 
@@ -486,7 +488,7 @@ private void ActionAdvertisingIdLoaded (GP_AdvertisingIdLoadResult res) {
 
 	private void ActionOAuthTokenLoaded(string token) {
 
-		AN_PoupsProxy.showMessage("Token Loaded", GooglePlayManager.Instance.loadedAuthToken);
+		//AN_PoupsProxy.showMessage("Token Loaded", GooglePlayManager.Instance.loadedAuthToken);
 	}
 
 

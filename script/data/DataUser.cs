@@ -74,6 +74,7 @@ public class DataUser : DataKvs {
 	public const string KEY_RECOVERY_TIME = "recovery_time";
 	public const string KEY_TOTAL_SPIN_NUM = "total_spin_num";
 	public const string KEY_HIGHSCORE_30GAME = "highscore_30games";
+	public const string KEY_UNITYADSCHECK_TIME = "unityadscheck_time";
 
 	public const string KEY_SYMBOL_CHERRY = "Cherry";
 	public const string KEY_SYMBOL_JACK = "J";
@@ -138,6 +139,14 @@ public class DataUser : DataKvs {
 		}
 		//Debug.LogError( string.Format("coin={0}", m_iCoin));
 		m_iTicket = ReadInt (KEY_TICKET);
+		if (HasKey(KEY_UNITYADSCHECK_TIME))
+		{
+			nextUnityadsCheckTime = Read(KEY_UNITYADSCHECK_TIME);
+		}
+		else
+		{
+			nextUnityadsCheckTime = "2010-10-10 00:00:00";
+		}
 
 		if (HasKey(KEY_RECOVERY_TIME))
 		{
@@ -222,6 +231,11 @@ public class DataUser : DataKvs {
 		}
 	}
 
+	public string nextUnityadsCheckTime
+	{
+		get; set;
+	}
+
 
 	public List<SymbolCount> m_symbolCountList = new List<SymbolCount>();
 	public void AddSymbolCount(string _strSymbolName)
@@ -249,8 +263,9 @@ public class DataUser : DataKvs {
 	{
 		m_iScoreThisgame += _iAddScore;
 	}
-	public void ScoreNext()
+	public int ScoreNext()
 	{
+		int iRet = m_iScoreThisgame;
 		m_scoreHistoryQueue.Dequeue();
 		m_scoreHistoryQueue.Enqueue(m_iScoreThisgame);
 
@@ -267,7 +282,7 @@ public class DataUser : DataKvs {
 			m_lScore30GameHigh = m_lScore30Game;
 			Write(KEY_HIGHSCORE_30GAME, m_lScore30GameHigh.ToString());
 		}
-
+		return iRet;
 		//Debug.LogError(m_iScoreThisgame);
 	}
 

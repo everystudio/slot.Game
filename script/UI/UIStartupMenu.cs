@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UIStartupMenu : CPanel {
 
-	public CtrlUserParam m_userParam;
+	public CtrlUserParam m_userParam;	
 
 	protected override void awake ()
 	{

@@ -16,7 +16,6 @@ public class RecoveryTime : MonoBehaviour {
 		else
 		{
 			CancelInvoke("DispUpdate");
-
 		}
 	}
 

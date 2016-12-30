@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+#if UNITY_ANDROID
+
 using GooglePlayGames.BasicApi;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi.Multiplayer;
+#endif
 using System;
 using UnityEngine.SocialPlatforms;
 
 public class AchievementManager : Singleton<AchievementManager> {
 
+	#if UNITY_ANDROID
 	void OnReceivedInvitation(Invitation invitation, bool shouldAutoAccept)
 	{
 
@@ -17,7 +21,7 @@ public class AchievementManager : Singleton<AchievementManager> {
 	{
 		throw new NotImplementedException();
 	}
-
+	#endif
 	public void Login()
 	{
 #if UNITY_ANDROID

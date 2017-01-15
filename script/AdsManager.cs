@@ -138,4 +138,32 @@ public class AdsManager : Singleton<AdsManager> {
 	{
 		refreshAds(m_strSceneNow);
 	}
+
+	public void DispHeader(bool _bFlag)
+	{
+		/*
+		if( _bFlag)
+		{
+			Debug.LogError("show header");
+		}
+		else
+		{
+			Debug.LogError("hide header");
+		}
+		*/
+		if (view1 == null)
+		{
+			return;
+		}
+
+		if (_bFlag)
+		{
+			view1.Show();
+		}
+		else
+		{
+			view1.Hide();
+		}
+		return;
+	}
 }

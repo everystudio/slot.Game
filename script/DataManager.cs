@@ -15,9 +15,9 @@ public class DataManager : DataManagerBase<DataManager> {
 	}
 
 #if UNITY_ANDROID
-	public const string LEADERBOARD_ID_30GAME = "CgkI9Y3s2cEKEAIQHw";
+	public const string LEADERBOARD_ID_30GAME = "CgkIy6DcndkGEAIQIA";
 #elif UNITY_IOS
-	public const string LEADERBOARD_ID_30GAME = "everystudio.slot.tarot.30game";
+	public const string LEADERBOARD_ID_30GAME = "everystudio.slot.dark.30game";
 #endif
 	private DataUser m_dataUser = new DataUser();
 	public DataUser user {

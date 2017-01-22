@@ -30,11 +30,11 @@ public class AdsManager : Singleton<AdsManager> {
 		string adUnitId1 = "unused";
 		string adUnitId2 = "unused";
 #elif UNITY_ANDROID
-        string adUnitId1 = "ca-app-pub-5869235725006697/4481993169";
-        string adUnitId2 = "ca-app-pub-5869235725006697/2917861565";
+        string adUnitId1 = "ca-app-pub-5869235725006697/6518849165";
+        string adUnitId2 = "ca-app-pub-5869235725006697/5042115968";
 #elif UNITY_IPHONE
-        string adUnitId1 = "ca-app-pub-5869235725006697/5958726364";
-        string adUnitId2 = "ca-app-pub-5869235725006697/1301527568";
+        string adUnitId1 = "ca-app-pub-5869235725006697/9611916365";
+        string adUnitId2 = "ca-app-pub-5869235725006697/6658449964";
 #else
         string adUnitId1 = "unexpected_platform";
         string adUnitId2 = "unexpected_platform";

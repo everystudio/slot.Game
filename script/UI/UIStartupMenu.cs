@@ -21,9 +21,9 @@ public class UIStartupMenu : CPanel {
 		SpriteManager.Instance.LoadAtlas("texture/collection/zoo");
 
 #if UNITY_ANDROID
-		string adUnitId = "ca-app-pub-5869235725006697/6964344360";
+		string adUnitId = "ca-app-pub-5869235725006697/7995582367";
 #elif UNITY_IPHONE
-		string adUnitId = "ca-app-pub-5869235725006697/8441077569";
+		string adUnitId = "ca-app-pub-5869235725006697/2088649563";
 #endif
 
 		// Create an interstitial.
@@ -41,7 +41,7 @@ public class UIStartupMenu : CPanel {
 		interstitial.OnAdFailedToLoad += ViewInterstitial_OnAdFailedToLoad;
 		interstitial.OnAdClosed += ViewInterstitial_OnAdClosed;
 
-		Invoke("autoStart", 5);
+		Invoke("autoStart", 3);
 	}
 	private void autoStart()
 	{
